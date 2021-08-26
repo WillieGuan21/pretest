@@ -1,0 +1,62 @@
+
+
+
+<script>
+    //item1    
+    const fibonacci_series = function (n) 
+    {
+        if (n===1){
+            return [0, 1];
+        }else{
+            const s = fibonacci_series(n - 1);
+            s.push(s[s.length - 1] + s[s.length - 2]);
+            return s;
+        }
+    };
+
+    function fibonacci(position){
+        console.log(fibonacci_series(8)[position])
+    }
+
+    console.log("ibonacci_series: ",fibonacci_series(8));
+    fibonacci(0)
+    fibonacci(1)
+    fibonacci(2)
+    fibonacci(3)
+
+
+    //item2
+    const throttleFunc = throttle('nick', 2000)
+
+    function throttle(name, num) {
+        window.setTimeout((() => console.log(name)), num)
+    }
+
+    //item3
+    function Stack() {
+        let items = [];
+        this.push = function(element) {
+            items.push(element);
+        }
+        this.pop = function() {
+            return items.pop();
+        }
+        this.size = function() {
+            return items.length;
+        }
+        this.print = function() {
+            console.log(items.toString());
+        }
+    }
+
+    const stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.pop();
+
+    console.log("stack size: ",stack.size()); 
+    
+
+
+</script>
